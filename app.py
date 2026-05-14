@@ -11,7 +11,7 @@ server = app.server  # <--- para publicar en RENDER
 # Nota: pd.read_csv puede tardar un momento dependiendo del tamaño del archivo.
 df = pd.read_csv('data/datos.csv', sep=';', encoding='utf-8', low_memory=False)
 
-# Mapear valores de Sexo si están codificados numéricamente (asumiendo 1: Masculino, 2: Femenino)
+# Mapear valores de Sexo
 if df['SEXO'].dtype in [int, float, 'int64', 'float64']:
     df['Sexo_Label'] = df['SEXO'].map({1: 'Masculino', 2: 'Femenino'}).fillna('Desconocido')
 else:
