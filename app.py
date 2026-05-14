@@ -6,7 +6,7 @@ import json
 
 # Inicialización de la aplicación Dash
 app = dash.Dash(__name__, title="Mortalidad en Colombia")
-
+server = app.server  # <--- para publicar en RENDER
 # Cargar los datos
 # Nota: pd.read_csv puede tardar un momento dependiendo del tamaño del archivo.
 df = pd.read_csv('data/datos.csv', sep=';', encoding='utf-8', low_memory=False)
